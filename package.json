@@ -1,0 +1,14 @@
+{
+  "name": "starterpack-ellieragan",
+  "version": "1.0.0",
+  "description": "*description*",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Ellie Boyd",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^4.2.1"
+  }
+}
