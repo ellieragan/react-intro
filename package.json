@@ -2,7 +2,7 @@
   "name": "starterpack-ellieragan",
   "version": "1.0.0",
   "description": "*description*",
-  "main": "src/index.js",
+  "main": "src/index.jsx", 
   "scripts": {
     "dev": "vite",
     "build": "vite build",
