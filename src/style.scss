@@ -1,6 +1,6 @@
 body, html {
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(to bottom, #fdc8f2 0%,#ffabdc 40%,#ff72c9 100%);
+    background: linear-gradient(to bottom, #dfc8fd 0%,#baabff 40%,#72aaff 100%);
     height: 100%;
   }
 
@@ -14,4 +14,8 @@ body, html {
 
   :root {
     text-size-adjust: 100%;
+  }
+
+  .active {
+    color: pink;
   }

@@ -2,15 +2,12 @@
   "name": "starterpack-ellieragan",
   "version": "1.0.0",
   "description": "*description*",
-<<<<<<< HEAD
-  "main": "src/index.jsx", 
-=======
   "main": "src/index.jsx",
->>>>>>> 6df1997f557d33cfe94a305016d4cee522bdbff9
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "author": "Ellie Boyd",
   "license": "ISC",
@@ -22,6 +19,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "react": "^18.2.0",
     "sass": "^1.62.0",
     "vite": "^4.2.1",
     "vite-plugin-eslint": "^1.8.1"
@@ -31,8 +29,9 @@
     "axios": "^1.3.5",
     "jquery": "^3.6.4",
     "lodash.debounce": "^4.0.8",
-    "react": "^18.2.0",
+    "react": "18.2.0",
     "react-dom": "^18.2.0",
-    "react-router": "^6.10.0"
+    "react-router": "^6.10.0",
+    "react-router-dom": "^6.10.0"
   }
 }
