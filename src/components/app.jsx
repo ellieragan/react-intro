@@ -1,43 +1,72 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import debounce from 'lodash.debounce';
-import youtubeSearch from '../services/youtube-api';
-import VideoDetail from './video_detail';
-import SearchBar from './search_bar';
-import VideoList from './video_list';
+import React from 'react';
+import {
+  BrowserRouter, Routes, Route, NavLink, useParams,
+} from 'react-router-dom';
+import Counter from './counter';
+import Controls from './controls';
+import YouTube from './youtube';
 
-// youtubeSearch('pixar').then((videos) => {
-//   console.log(videos);
-// });
-
-function App(props) {
-  const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelected] = useState(null);
-
-  const search = (text) => {
-    youtubeSearch(text).then((result) => {
-      setVideos(result);
-      setSelected(result[0]);
-    });
-  };
-
-  useEffect(() => {
-    search('pixar');
-  }, []);
-
-  console.log(search);
-  console.log(videos);
-  console.log(selectedVideo);
-  const debouncedSearch = useCallback(debounce(search, 500), []);
-
+function About(props) {
   return (
-    <div>
-      <SearchBar onSearchChange={debouncedSearch} />
-      <div id="video-section">
-        <VideoDetail video={selectedVideo} />
-        <VideoList onVideoSelect={(selection) => setSelected(selection)} videos={videos} />
-      </div>
-    </div>
+    <div> All there is to know about me </div>
   );
 }
 
+function Welcome(props) {
+  return (
+    <div>
+      Welcome
+      <Counter />
+      <Controls />
+    </div>
+
+  );
+}
+
+function App(props) {
+  return (
+    <BrowserRouter>
+      <div>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/test/:id" element={<Test />} />
+          <Route path="*" element={<FallBack />} />
+          <Route path="/youtube" element={<YouTube />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+function Nav(props) {
+  return (
+    <nav>
+      <ul>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/test/id1">test id1</NavLink></li>
+        <li><NavLink to="/test/id2">test id2</NavLink></li>
+        <li><NavLink to="/youtube">YouTube</NavLink></li>
+      </ul>
+    </nav>
+  );
+}
+
+function Test(props) {
+  const { id } = useParams();
+  return (
+    <div> ID: {id} </div>
+  );
+}
+
+function FallBack(props) {
+  return (
+    <div>URL Not Found</div>
+  );
+}
+
+//   const root = createRoot(document.getElementById('main'));
+// root.render(<App />);
 export default App;
