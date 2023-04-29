@@ -2,8 +2,6 @@ import React from 'react';
 import {
   BrowserRouter, Routes, Route, NavLink, useParams,
 } from 'react-router-dom';
-import Counter from './counter';
-import Controls from './controls';
 import YouTube from './youtube';
 
 function About(props) {
@@ -14,11 +12,7 @@ function About(props) {
 
 function Welcome(props) {
   return (
-    <div>
-      Welcome
-      <Counter />
-      <Controls />
-    </div>
+    <div>Welcome</div>
 
   );
 }

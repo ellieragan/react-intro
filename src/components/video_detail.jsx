@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 // function VideoDetail({ video }) {
 //   const { videoId } = video.id; // is example of destructuring, pulling videoId from out of the object that is video.id
@@ -17,7 +18,8 @@ import React from 'react';
 //     );
 //   }
 // }
-function VideoDetail({ video }) {
+function VideoDetail(props) {
+  const video = useSelector((reduxState) => reduxState.video.selected);
   if (!video) {
     console.log('HELP');
     return <div>Loading...</div>;

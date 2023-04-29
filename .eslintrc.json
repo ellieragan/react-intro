@@ -51,6 +51,9 @@
             "extensions": [".js", ".jsx", ".ts", ".tsx"]
           }
         }
-    }
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
+      }
 }
 
