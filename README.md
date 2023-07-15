@@ -1,13 +1,4 @@
-# Title
+## React intro
 
-*description*
+[deployed url](http://url-if-deployed-here](https://react-intro-ellieragan.onrender.com)https://react-intro-ellieragan.onrender.com)
 
-[deployed url](http://url-if-deployed-here)
-
-## What Worked Well
-
-## What Didn't
-
-## Extra Credit
-
-## Screenshots
